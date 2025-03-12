@@ -1,12 +1,49 @@
-export function FormularioDireito () {
+export function FormularioDireito() {
     return (
-        <div>
-            <h4>SEXO</h4>
-            <select name="Gênero" id="gênero"></select>
-            <option value={"masculino"}>Masculino</option>
-            <option value={"feminino"}>Feminino</option>
-            <h4>DEPARTAMENTO</h4>   
-            <select name="Estado" id="estado"></select>
+        <div className="min-h-full w-2/5border-1 border-black-solid bg-cyan-400">
+            <form>
+                <label>SEXO</label>
+                <select>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                </select><br></br>
+                <label>ESTADO</label>
+                <select>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                    <option>SAO PAULO</option>
+                </select><br></br>
+                <label>CIDADE</label>
+                <select>
+                    <option>Pirassununga</option>
+                    <option>Tambau</option>
+                    <option>Santa Cruz das Palmeiras</option>
+                </select>
+            </form>
         </div>
     )
 }
+                    
+
