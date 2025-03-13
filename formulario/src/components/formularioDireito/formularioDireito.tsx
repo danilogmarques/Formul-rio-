@@ -1,13 +1,13 @@
 export function FormularioDireito() {
     return (
-        <div className="min-h-full w-2/5border-1 border-black-solid bg-cyan-400">
+        <div className="w-2/5 p-24 m-4 border-3 border-black border-dashed">
             <form>
-                <label>SEXO</label>
+                <label>SEXO</label><br />
                 <select>
                     <option>Masculino</option>
                     <option>Feminino</option>
                 </select><br></br>
-                <label>ESTADO</label>
+                <label>ESTADO</label><br />
                 <select>
                     <option>SAO PAULO</option>
                     <option>SAO PAULO</option>
@@ -35,7 +35,7 @@ export function FormularioDireito() {
                     <option>SAO PAULO</option>
                     <option>SAO PAULO</option>
                 </select><br></br>
-                <label>CIDADE</label>
+                <label>CIDADE</label><br />
                 <select>
                     <option>Pirassununga</option>
                     <option>Tambau</option>

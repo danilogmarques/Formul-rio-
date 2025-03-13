@@ -7,7 +7,7 @@ import { FormularioDireito } from "@/components/formularioDireito/formularioDire
 export default function Home () {
   return (
     <div className="flex w-screen h-screen bg-amber-700 justify-center items-center">
-      <section className=" flex w-4/5 h-4/5 bg-gray-300" >
+      <section className=" flex w-4/5 h-4/5 bg-gray-200" >
         <Aside />
         <Formulario />
         <FormularioDireito /> 
