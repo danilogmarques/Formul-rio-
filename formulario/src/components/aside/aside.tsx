@@ -8,9 +8,9 @@ export function Aside () {
                 <button type="button" className=" m-2 w-36 h-16 border-2 border-solid-black">Registro PN</button><br></br>
                 <button type="button" className=" m-2 w-36 h-16 border-2 border-solid-black">Registro PJ</button>
             </div>
-            <div className="m-4 w-42 h-16 border-2 border-red-600 border-dashed">
+            <div className="m-4 p-2 w-42 h-16 border-2 border-blue-500 border-dashed">
                 <label>Novo Cliente</label>
-                <input type="checkbox" name="Novo Cliente"></input>
+                <input type="checkbox" name="Novo Cliente"></input><br />
                 <label>Já Possuo Conta</label>
                 <input type="checkbox" name="Já Possuo conta"></input>
             </div>
