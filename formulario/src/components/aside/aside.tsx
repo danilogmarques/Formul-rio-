@@ -1,6 +1,14 @@
+"use client"
+
+import { useState } from "react"
+
 export function Aside () {
+
+    const [ registroPN, setRegistroPN ] = useState ("");
+    const [ registroPJ, setRegistroPJ ] = useState ("");
+
     return (
-        <div className="flex flex-col flex-wrap items-center min-h-full w-1/5 border-1 border-solid border-black bg-yellow-100">
+        <div className="flex flex-col flex-wrap items-center lg:min-h-full lg:w-1/5 border-1 border-solid border-black bg-yellow-100">
             <div className="m-6"> 
             <h1>Logo</h1>
             </div>

@@ -1,6 +1,6 @@
 export function FormularioDireito() {
     return (
-        <div className=" w-2/5 p-24 m-8 border-2 border-red-600 border-dashed text-xs">
+        <div className="w-2/5 p-24 m-8 border-2 border-red-600 border-dashed text-xs">
             <form action="#" >
 
                 <label>SENHA</label>
