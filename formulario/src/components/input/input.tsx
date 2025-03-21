@@ -2,36 +2,39 @@
 
 import { ChangeEvent, useState } from "react"
 
-export function Input() {
+export function Input(props: any) {
 
-    const [ estado, setEstado ] = useState({
-        name:''
+    const [estado, setEstado] = useState({
+        name: ''
     })
 
-    const atualizaForm = ( event: ChangeEvent<HTMLInputElement>) => {
+    console.log("estado Formulario", estado);
+
+    const atualizaForm = (event: ChangeEvent<HTMLInputElement>) => {
         setEstado(previous => {
-            return { ...previous, [event.target.name] : event.target.value}
+            return { ...previous, [event.target.name]: event.target.value }
         })
     };
 
 
     return (
-        <div className="lg-w-2/5 border-2 p-24 m-8 border-red-600 border-dashed text-xs" >
+        <div>
             <form action="#">
-                <label id="name"></label>
-                name
+                <label>{props.name}</label>
                 <input
                     onChange={atualizaForm}
-                    className=" m-1 p-1 border-1 border-black-solid rounded-md"
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="name completo"
-                    required
-                ></input>
-                </form>
-        
-
+                    className="m-1 p-1 border-1 border-black border-solid rounded-md"
+                    name={props.name}
+                    placeholder={props.placeholder}
+                    id={props.id}
+                    type={props.type} 
+                />
+            </form>
         </div>
     )
 };
+
+
+
+
+
