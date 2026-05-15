@@ -1,7 +1,7 @@
 export function FormularioDireito() {
     return (
-        <div className="w-2/5 p-24 m-8 border-2 border-red-600 border-dashed text-xs">
-            <form action="#" >
+        <form action="#" >
+            <div className="flex flex-col lg-w-2/5 border-2 p-24 m-8 border-red-600 border-dashed text-xs">
 
                 <label>SENHA</label>
                 <input
@@ -11,16 +11,16 @@ export function FormularioDireito() {
                 >
                 </input>
 
-                <label>SEXO</label><br />
+                <label>SEXO</label>
                 <select required className=" m-1 p-1 border-1 border-black-solid rounded-md">
                     <option>Masculino</option>
                     <option>Feminino</option>
-                </select><br />
+                </select>
 
                 <label>ESTADO</label><br />
                 <select required className=" m-1 p-1 border-1 border-black-solid rounded-md">
                     <option>SAO PAULO</option>
-                </select><br />
+                </select>
 
                 <label>CIDADE</label>
                 <select required className=" m-1 p-1 border-1 border-black-solid rounded-md">
@@ -28,8 +28,8 @@ export function FormularioDireito() {
                     <option>Tambau</option>
                     <option>Santa Cruz das Palmeiras</option>
                 </select>
-            </form>
-        </div>
+            </div>
+        </form>
     )
 }
 
