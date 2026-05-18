@@ -11,15 +11,15 @@ export function Aside() {
     const [registroPJ, setRegistroPJ] = useState("");
 
     return (
-        <div className="flex flex-col flex-wrap items-center lg:min-h-full lg:w-1/5 border-1 border-solid border-black bg-yellow-100">
+        <div className="flex flex-col items-center justify-evenly lg:min-h-full lg:w-1/5 border-1 border-solid border-black bg-yellow-100">
             <div className="m-6">
                 <h1>Logo</h1>
             </div>
-            <div className="border-2  border-red-600 border-dashed">
+            <div className=" flex flex-col items-center border-red-600 border-dashed">
 
                 <Button
                     type="submit"
-                    className=" bg-red-500 hover:bg-red-700 m-2 w-36 h-16 border-2 border-solid-black"
+                    className=" cursor-pointer bg-red-500 hover:bg-red-700 m-2 w-36 h-16 border-2 border-solid-black"
                 >
                     Registro PN
                 </Button>
@@ -27,7 +27,7 @@ export function Aside() {
 
                 <Button
                     type="submit"
-                    className=" bg-red-500 hover:bg-red-700 m-2 w-36 h-16 border-2 border-solid-black"
+                    className=" cursor-pointer bg-red-500 hover:bg-red-700 m-2 w-36 h-16 border-2 border-solid-black"
                 >
                     Registro PJ
                 </Button>
