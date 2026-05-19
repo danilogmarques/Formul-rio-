@@ -2,19 +2,18 @@
 
 import { useForm } from "react-hook-form"
 import { Input } from "../input/input"
-import { FormData } from "../../types/formData"
-
-
-// type FormData = {
-//     Name: string
-//     Email: string
-//     CPF: string
-//     Identidade: string
-// }
+import { formSchema, FormData } from "../../validators/schemas"
+import { zodResolver } from "@hookform/resolvers/zod";
 
 
 export function Formulario() {
-    const { register, handleSubmit } = useForm<FormData>();
+    const { 
+        register, 
+        handleSubmit,
+        formState: { errors },
+     } = useForm<FormData>({
+        resolver: zodResolver(formSchema),
+    });
 
    
 
@@ -32,7 +31,7 @@ export function Formulario() {
                 id="name"
                 placeholder="digite seu nome"
                 required
-                {...register("Name")}
+                {...register("name")}
             />
             <label>EMAIL</label>
             <Input
@@ -42,7 +41,7 @@ export function Formulario() {
                 placeholder="email"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 required
-                {...register("Email")}
+                {...register("email")}
             />
             <label>CPF</label>
             <Input
@@ -52,7 +51,7 @@ export function Formulario() {
                 placeholder="CPF"
                 required
                 pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
-                {...register("CPF")}
+                {...register("cpf")}
             />
             <label>DOCUMENTO DE IDENTIDADE</label>
             <Input
@@ -61,7 +60,7 @@ export function Formulario() {
                 id="identidade"
                 placeholder="identidade"
                 required
-                {...register("Identidade")}
+                {...register("rg")}
             />
         </div>
         </form>
