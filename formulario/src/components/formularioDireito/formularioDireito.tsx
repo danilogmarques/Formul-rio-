@@ -4,12 +4,15 @@ import { useEffect, useState } from "react";
 import { FormData } from "../../types/formData";
 import { Input } from "../input/input";
 import { useForm } from "react-hook-form";
+import { Localidade } from "../../types/formData"
 
 export function FormularioDireito() {
 
     const { register, handleSubmit } = useForm<FormData>();
+    const [estados, setEstados] = useState<Localidade[]>([]);
+    const [cidades, setCidades] = useState<Localidade[]>([]);
+    const [estadoSelecionado, setEstadoSelecionado] = useState<string>("");
 
-    const [estados, setEstados] = useState<any[]>([]);
 
     useEffect(() => {
 
@@ -34,6 +37,16 @@ export function FormularioDireito() {
 
     }, []);
 
+    useEffect(() => {
+        if (!estadoSelecionado) return setCidades([]);
+
+        fetch(
+            `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoSelecionado}/municipios?orderBy=nome`
+        )
+            .then((res) => res.json())
+            .then((data) => setCidades(data));
+    }, [estadoSelecionado]);
+
     function onSubmit(data: FormData) {
         console.log("submit", data);
     }
@@ -42,7 +55,7 @@ export function FormularioDireito() {
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col lg-w-2/5 border-2 p-24 m-8 border-red-600 border-dashed text-xs">
 
-            
+
 
                 <label>SENHA</label>
 
@@ -59,6 +72,7 @@ export function FormularioDireito() {
                 <select
                     required
                     className="m-1 p-1 border-1 border-black rounded-md"
+                    {... register("sexo")}
                 >
                     <option>Masculino</option>
                     <option>Feminino</option>
@@ -67,11 +81,11 @@ export function FormularioDireito() {
                 <label>ESTADO</label>
 
                 <select
-                    required
                     className="m-1 p-1 border-1 border-black rounded-md"
+                    value={estadoSelecionado}
+                    {...register("estado")}
+                    onChange={(e) => setEstadoSelecionado(e.target.value)}
                 >
-                    <option value=""></option>
-
                     {estados.map((estado: any) => (
                         <option
                             key={estado.id}
@@ -82,15 +96,23 @@ export function FormularioDireito() {
                     ))}
                 </select>
 
-                <label>CIDADE</label>
 
+                <label>CIDADE</label>
                 <select
-                    required
                     className="m-1 p-1 border-1 border-black rounded-md"
+                    disabled={!cidades.length}
+                    {...register("cidade")}
                 >
-                    <option>Pirassununga</option>
-                    <option>Tambaú</option>
-                    <option>Santa Cruz das Palmeiras</option>
+                    <option value=""></option>
+
+                    {cidades.map((cidade: any) => (
+                        <option
+                            key={cidade.id}
+                            value={cidade.nome}
+                        >
+                            {cidade.nome}
+                        </option>
+                    ))}
                 </select>
 
             </div>
