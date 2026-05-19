@@ -27,7 +27,7 @@ export function Formulario() {
 
         <label>NOME</label>
             <Input
-                className="m-1 p-1 border-1 border-black border-solid rounded-md"
+                className="m-1 p-1 border-1 border-black rounded-md"
                 type="text"
                 id="name"
                 placeholder="digite seu nome"
@@ -36,7 +36,7 @@ export function Formulario() {
             />
             <label>EMAIL</label>
             <Input
-                className="m-1 p-1 border-1 border-black border-solid rounded-md"
+                className="m-1 p-1 border-1 border-black rounded-md"
                 type="email"
                 id="email"
                 placeholder="email"
@@ -46,7 +46,7 @@ export function Formulario() {
             />
             <label>CPF</label>
             <Input
-                className="m-1 p-1 border-1 border-black-solid rounded-md"
+                className="m-1 p-1 border-1 border-black rounded-md"
                 type="number"
                 id="cpf"
                 placeholder="CPF"
