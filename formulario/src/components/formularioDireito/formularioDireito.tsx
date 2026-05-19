@@ -1,14 +1,22 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FormData } from "../../types/formData";
 import { Input } from "../input/input";
 import { useForm } from "react-hook-form";
 import { Localidade } from "../../types/formData"
+import { formSchema, FormData } from "../../validators/schemas"
+import { zodResolver } from "@hookform/resolvers/zod";
+
 
 export function FormularioDireito() {
 
-    const { register, handleSubmit } = useForm<FormData>();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<FormData>({
+        resolver: zodResolver(formSchema),
+    });
     const [estados, setEstados] = useState<Localidade[]>([]);
     const [cidades, setCidades] = useState<Localidade[]>([]);
     const [estadoSelecionado, setEstadoSelecionado] = useState<string>("");
@@ -64,7 +72,7 @@ export function FormularioDireito() {
                     pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
                     required
                     type="password"
-                    {...register("senha")}
+                    {...register("password")}
                 />
 
                 <label>SEXO</label>
@@ -72,7 +80,7 @@ export function FormularioDireito() {
                 <select
                     required
                     className="m-1 p-1 border-1 border-black rounded-md"
-                    {... register("sexo")}
+                    {...register("sexo")}
                 >
                     <option>Masculino</option>
                     <option>Feminino</option>
