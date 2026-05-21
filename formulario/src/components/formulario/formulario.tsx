@@ -21,7 +21,9 @@ export function Formulario() {
         console.log("submt", data)
     }
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form 
+        id="formulario"
+        onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col lg-w-2/5 border-2 p-24 m-8 border-red-600 border-dashed text-xs">
 
         <label>NOME</label>
